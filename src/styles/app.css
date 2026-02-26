@@ -1,0 +1,36 @@
+body{
+
+background:#111;
+color:white;
+font-family:sans-serif;
+
+}
+
+.container{
+
+max-width:1000px;
+margin:auto;
+
+}
+
+.header{
+
+text-align:center;
+margin-bottom:20px;
+
+}
+
+.upload-section{
+
+padding:20px;
+border:1px solid red;
+
+}
+
+.results-section{
+
+margin-top:20px;
+padding:20px;
+border:1px solid red;
+
+}
