@@ -1,36 +1,241 @@
-body{
+/* App-specific styles (base styles live in styles.css) */
 
-background:#111;
-color:white;
-font-family:sans-serif;
-
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 16px;
+  flex-wrap: wrap;
 }
 
-.container{
-
-max-width:1000px;
-margin:auto;
-
+.download-waivers {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 6px;
+  text-align: right;
 }
 
-.header{
-
-text-align:center;
-margin-bottom:20px;
-
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
-.upload-section{
-
-padding:20px;
-border:1px solid red;
-
+.error-box {
+  margin-top: 20px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: #fef2f2;
+  color: #991b1b;
+  white-space: pre-wrap;
 }
 
-.results-section{
+.stat.bad .stat-value {
+  color: #b91c1c;
+}
 
-margin-top:20px;
-padding:20px;
-border:1px solid red;
+.stat.warn .stat-value {
+  color: #b45309;
+}
 
+.muted {
+  color: #64748b;
+  font-size: 13px;
+}
+
+.result-group {
+  margin-top: 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  padding: 16px 20px;
+}
+
+.result-group > summary {
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 17px;
+}
+
+.result-group.critical > summary {
+  color: #b91c1c;
+}
+
+.result-group.waivable > summary {
+  color: #b45309;
+}
+
+.result-group > p {
+  margin: 8px 0 4px;
+}
+
+.day-table {
+  width: 100%;
+  margin-top: 12px;
+  border-collapse: collapse;
+  font-size: 14px;
+}
+
+.day-table th,
+.day-table td {
+  text-align: left;
+  vertical-align: top;
+  padding: 8px 10px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.day-table th {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 12px;
+  text-transform: uppercase;
+}
+
+.punch {
+  white-space: nowrap;
+}
+
+.notice {
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 10px;
+  background: #ecfdf5;
+  color: #065f46;
+}
+
+button.small {
+  padding: 6px 12px;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.link-button {
+  background: none;
+  padding: 0;
+  color: #2563eb;
+  font-weight: 600;
+  text-decoration: underline;
+}
+
+.signed {
+  color: #047857;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+/* Signing dialog */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.55);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 24px 16px;
+  overflow-y: auto;
+  z-index: 10;
+}
+
+.modal {
+  width: 100%;
+  max-width: 680px;
+  background: white;
+  border-radius: 14px;
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal h2 {
+  text-align: center;
+  font-size: 19px;
+}
+
+.waiver-fields {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 6px 14px;
+}
+
+.waiver-fields dt {
+  font-weight: 700;
+}
+
+.waiver-text {
+  max-height: 240px;
+  overflow-y: auto;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 14px;
+  line-height: 1.45;
+}
+
+.waiver-text h4 {
+  margin: 10px 0 4px;
+}
+
+.waiver-text ul {
+  padding-left: 20px;
+}
+
+.waiver-text li,
+.waiver-text p {
+  margin-bottom: 6px;
+}
+
+.signature-pad-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.signature-pad canvas {
+  display: block;
+  width: 100%;
+  aspect-ratio: 3.5 / 1;
+  border: 2px dashed #cbd5e1;
+  border-radius: 10px;
+  background: #fff;
+  touch-action: none;
+  cursor: crosshair;
+}
+
+.text-field {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  font-weight: 600;
+}
+
+.text-field input {
+  padding: 10px 12px;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.date-field input {
+  max-width: 220px;
+}
+
+.notice.warn {
+  background: #fffbeb;
+  color: #92400e;
+}
+
+.pay-period {
+  margin-top: 20px;
+  font-weight: 600;
+  color: #334155;
 }
